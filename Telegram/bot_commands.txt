@@ -1,0 +1,10 @@
+status_temp - Auflistung der Temperaturen
+graph_temp - Plot der Temp 24h
+status_humi - Auflistung der Feuchtigkeitswerte
+graph_humi - Plot der Feuchtigkeit 24h
+status_dewpoint - Auflistung der Kondensationspunkte
+graph_dewpoint - Plot der Dewpoint 24h
+status_systemv - Auflistung der Systemversorgung
+graph_systemv - Plot der System Voltage versorgung
+status_wlan - Auflistung der WLAN-Signalstärken
+graph_wlan - Plot der WLAN Signalstärke
