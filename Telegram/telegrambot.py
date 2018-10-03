@@ -12,6 +12,7 @@ import commands
 def handle(msg):
     chat_id = msg['chat']['id']
     command = msg['text']
+    home_dir = '/home/pi/ME_home_projects/Telegram/'
     work_dir = '/home/pi/Weather/data/'
 
     # Debug ausgabe der Commands
@@ -24,7 +25,7 @@ def handle(msg):
         commands.temp(bot, chat_id, work_dir + 'temp/temp2018.csv')
     # plot current temperature
     if command == "/graph_temp":
-        commands.plot_temp(bot, chat_id, work_dir + 'temp/temp2018.csv', 'Telegram/test_temperature.png')
+        commands.plot_temp(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
 
     #---------------------------------------------------------------------------
     # Humidity
@@ -35,7 +36,7 @@ def handle(msg):
 
     # plot current humidity
     if command == "/graph_humi":
-        commands.plot_humi(bot, chat_id, work_dir + 'humidity/humidity2018.csv', 'Telegram/test_humidity.png')
+        commands.plot_humi(bot, chat_id, work_dir + 'humidity/humidity2018.csv', home_dir + 'test_humidity.png')
 
     #---------------------------------------------------------------------------
     # Dewpoint
@@ -46,7 +47,7 @@ def handle(msg):
 
     # print current dewpoint
     if command == "/graph_dewpoint":
-        commands.plot_dewpoint(bot, chat_id, work_dir + 'dewpoint/dewpoint2018.csv', 'Telegram/test_dewpoint.png')
+        commands.plot_dewpoint(bot, chat_id, work_dir + 'dewpoint/dewpoint2018.csv', home_dir + 'test_dewpoint.png')
 
     #---------------------------------------------------------------------------
     # System Voltage
@@ -57,7 +58,7 @@ def handle(msg):
 
     # print current system voltage
     if command == "/graph_systemv":
-        commands.plot_systemv(bot, chat_id, work_dir + 'systemV/systemV2018.csv', 'Telegram/test_systemv.png')
+        commands.plot_systemv(bot, chat_id, work_dir + 'systemV/systemV2018.csv', home_dir + 'test_systemv.png')
 
     #---------------------------------------------------------------------------
     # WLAN Signal
@@ -67,7 +68,7 @@ def handle(msg):
         commands.wlan(bot, chat_id, work_dir + 'wlanSignal/wlanSignal2018.csv')
 
     if command == "/graph_wlan":
-        commands.plot_wlan(bot, chat_id, work_dir + 'wlanSignal/wlanSignal2018.csv', 'Telegram/test_wlan.png')
+        commands.plot_wlan(bot, chat_id, work_dir + 'wlanSignal/wlanSignal2018.csv', home_dir + 'test_wlan.png')
 
 #-------------------------------------------------------------------------------
 # Main related code
