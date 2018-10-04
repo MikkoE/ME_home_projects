@@ -47,4 +47,4 @@ def createFloorPlan(bot, chat_id, datafile, outfile):
 
     fp.save(outfile)
 
-    bot.sendPhoto(chat_id, photo=open(outFile, 'rb'))
+    bot.sendPhoto(chat_id, photo=open(outfile, 'rb'))
