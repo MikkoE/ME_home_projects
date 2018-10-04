@@ -79,7 +79,7 @@ def handle(msg):
 #-------------------------------------------------------------------------------
 
 #loading environment values
-csv_reader = csv.reader(open("/env/env.csv", "r"), delimiter=";")
+csv_reader = csv.reader(open("env/env.csv", "r"), delimiter=";")
 for row in csv_reader:
     if row[0] == "bot-key":
         # bot privte key
