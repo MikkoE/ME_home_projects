@@ -9,7 +9,7 @@ offset = [(),]
 def color_chooser(temp):
     if temp > 24:
         return color_hot
-    else if temp > 18 and temp < 24.1:
+    elif temp > 18 and temp < 24.1:
         return color_warm
     else
         return color_cold
