@@ -8,12 +8,12 @@ color_hot = (255,0,0)
 offset = [(),]
 
 def color_chooser(temp):
-    if float(temp) > 24:
-        return color_hot
-    elif float(temp) > 18 and temp < 24.1:
+    if float(temp) < 18:
+        return color_cold
+    elif float(temp) > 18 and float(temp) < 24.1:
         return color_warm
     else:
-        return color_cold
+        return color_hot
 
 def createFloorPlan(bot, chat_id, datafile, outfile):
     #floorplan
