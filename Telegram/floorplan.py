@@ -39,11 +39,11 @@ def createFloorPlan(bot, chat_id, datafile, outfile):
     time_str = unicode(value)
 
     draw.text(xy=offset[0], text=t[1], fill=color_chooser(t[1]),font=font_type) #Veranda
-    draw.text(xy=offset[0], text=t[2], fill=color_chooser(t[2]),font=font_type) #Wohnzimmer
-    draw.text(xy=offset[0], text=t[3], fill=color_chooser(t[3]),font=font_type) #Schlafzimmer
-    draw.text(xy=offset[0], text=t[4], fill=color_chooser(t[4]),font=font_type) #Badezimmer
-    draw.text(xy=offset[0], text=t[5], fill=color_chooser(t[5]),font=font_type) #Elektrik
-    draw.text(xy=offset[0], text=t[6], fill=color_chooser(t[6]),font=font_type) #Carport
+    draw.text(xy=offset[1], text=t[2], fill=color_chooser(t[2]),font=font_type) #Wohnzimmer
+    draw.text(xy=offset[2], text=t[3], fill=color_chooser(t[3]),font=font_type) #Schlafzimmer
+    draw.text(xy=offset[3], text=t[4], fill=color_chooser(t[4]),font=font_type) #Badezimmer
+    draw.text(xy=offset[4], text=t[5], fill=color_chooser(t[5]),font=font_type) #Elektrik
+    draw.text(xy=offset[5], text=t[6], fill=color_chooser(t[6]),font=font_type) #Carport
 
     fp.save(outfile)
 
