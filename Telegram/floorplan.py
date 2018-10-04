@@ -1,3 +1,4 @@
+import datetime
 from PIL import Image, ImageDraw, ImageFont
 
 color_cold = (0,0,255)
