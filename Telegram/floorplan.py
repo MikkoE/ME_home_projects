@@ -8,9 +8,9 @@ color_hot = (255,0,0)
 offset = [(),]
 
 def color_chooser(temp):
-    if temp > 24:
+    if int(temp) > 24:
         return color_hot
-    elif temp > 18 and temp < 24.1:
+    elif int(temp) > 18 and temp < 24.1:
         return color_warm
     else:
         return color_cold
@@ -36,11 +36,11 @@ def createFloorPlan(bot, chat_id, datafile, outfile):
     value = datetime.datetime.fromtimestamp((int(t[0])/1000))
     time_str = unicode(value)
 
-    draw.text(xy=(250,650), text=t[1], fill=color_chooser(t[1]),font=font_type) #Veranda
+    draw.text(xy=(260,650), text=t[1], fill=color_chooser(t[1]),font=font_type) #Veranda
     draw.text(xy=(600,600), text=t[2], fill=color_chooser(t[2]),font=font_type) #Wohnzimmer
-    draw.text(xy=(730,20), text=t[3], fill=color_chooser(t[3]),font=font_type) #Schlafzimmer
-    draw.text(xy=(730,450), text=t[4], fill=color_chooser(t[4]),font=font_type) #Badezimmer
-    draw.text(xy=(380,400), text=t[5], fill=color_chooser(t[5]),font=font_type) #Elektrik
+    draw.text(xy=(730,50), text=t[3], fill=color_chooser(t[3]),font=font_type) #Schlafzimmer
+    draw.text(xy=(750,420), text=t[4], fill=color_chooser(t[4]),font=font_type) #Badezimmer
+    draw.text(xy=(350,400), text=t[5], fill=color_chooser(t[5]),font=font_type) #Elektrik
     draw.text(xy=(100,130), text=t[6], fill=color_chooser(t[6]),font=font_type) #Carport
 
 
