@@ -8,9 +8,9 @@ color_hot = (255,0,0)
 offset = [(),]
 
 def color_chooser(temp):
-    if int(temp) > 24:
+    if float(temp) > 24:
         return color_hot
-    elif int(temp) > 18 and temp < 24.1:
+    elif float(temp) > 18 and temp < 24.1:
         return color_warm
     else:
         return color_cold
