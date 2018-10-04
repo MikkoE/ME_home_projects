@@ -1,5 +1,6 @@
 status_temp - Auflistung der Temperaturen
 graph_temp - Plot der Temp 24h
+floorplan_temp - Zeigt Grundris mit Temperaturen
 status_humi - Auflistung der Feuchtigkeitswerte
 graph_humi - Plot der Feuchtigkeit 24h
 status_dewpoint - Auflistung der Kondensationspunkte

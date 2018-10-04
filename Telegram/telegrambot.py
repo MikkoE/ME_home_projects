@@ -6,6 +6,7 @@ import time
 import telepot
 
 import commands
+import floorplan
 
 
 
@@ -26,6 +27,9 @@ def handle(msg):
     # plot current temperature
     if command == "/graph_temp":
         commands.plot_temp(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+    # print current temperature on a floorplan
+    if command == "/floorplan_temp":
+        floorplan.createFlooPlan(bot, chat_id, work_dir + 'temp/temp2018.csv')
 
     #---------------------------------------------------------------------------
     # Humidity
@@ -75,7 +79,7 @@ def handle(msg):
 #-------------------------------------------------------------------------------
 
 #loading environment values
-csv_reader = csv.reader(open("env.csv", "r"), delimiter=";")
+csv_reader = csv.reader(open("/env/env.csv", "r"), delimiter=";")
 for row in csv_reader:
     if row[0] == "bot-key":
         # bot privte key
