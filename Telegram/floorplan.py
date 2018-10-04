@@ -40,8 +40,8 @@ def createFloorPlan(bot, chat_id, datafile, outfile):
     draw.text(xy=(1100,1000), text=t[2], fill=color_chooser(t[2]),font=font_type)
     draw.text(xy=(1100,100), text=t[3], fill=color_chooser(t[3]),font=font_type)
     draw.text(xy=(1100,700), text=t[4], fill=color_chooser(t[4]),font=font_type)
-    draw.text(xy=(600,800), text=t[5], fill=color_chooser(t[5]),font=font_type)
-    draw.text(xy=(200,200), text=t[6], fill=color_chooser(t[6]),font=font_type)
+    draw.text(xy=(400,500), text=t[5], fill=color_chooser(t[5]),font=font_type)
+    draw.text(xy=(100,100), text=t[6], fill=color_chooser(t[6]),font=font_type)
 
 
 
