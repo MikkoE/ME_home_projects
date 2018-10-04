@@ -15,7 +15,7 @@ def color_chooser(temp):
     else:
         return color_cold
 
-def createFlooPlan(bot, chat_id, datafile):
+def createFloorPlan(bot, chat_id, datafile, outfile):
     #floorplan
     fp = Image.open('/home/pi/env/floorplan.png')
     fp_w, fp_h = fp.size
@@ -46,4 +46,4 @@ def createFlooPlan(bot, chat_id, datafile):
 
 
 
-    fp.save('out.png')
+    fp.save(outfile)

@@ -29,7 +29,7 @@ def handle(msg):
         commands.plot_temp(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
     # print current temperature on a floorplan
     if command == "/floorplan_temp":
-        floorplan.createFlooPlan(bot, chat_id, work_dir + 'temp/temp2018.csv')
+        floorplan.createFloorPlan(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_floorplan.png')
 
     #---------------------------------------------------------------------------
     # Humidity
