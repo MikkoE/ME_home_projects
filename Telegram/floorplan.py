@@ -11,7 +11,7 @@ def color_chooser(temp):
         return color_hot
     elif temp > 18 and temp < 24.1:
         return color_warm
-    else
+    else:
         return color_cold
 
 def createFlooPlan(bot, chat_id, datafile):
