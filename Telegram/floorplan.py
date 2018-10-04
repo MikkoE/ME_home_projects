@@ -1,9 +1,9 @@
 import datetime
 from PIL import Image, ImageDraw, ImageFont
 
-color_cold = (0,0,255)
-color_warm = (255, 211, 0)
-color_hot = (255,0,0)
+color_cold = (0,0,255)     # blue
+color_warm = (253, 106, 2) # orange
+color_hot = (255,0,0)      # red
 
 offset = [(),]
 
