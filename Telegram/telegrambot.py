@@ -30,23 +30,24 @@ def handle(msg):
     print "using message chat id: "
     print chat_id
 
-
+    if edgar_chatID == str(chat_id):
+        bot.sendMessage(chat_id, text="Nice try Edgar!\n Stop cheating on me :smiley:")
 
     # using my chatID to verify ist me chatting with the bot
     if my_chatID == str(chat_id):
-        print "youre allowed to chat"
-        bot.sendMessage(chat_id, text='Hey Mikki, hope youre doing great!')
+        #print "youre allowed to chat"
+        bot.sendMessage(chat_id, text='Hey Mikko, hope youre doing great!')
 
         # Debug ausgabe der Commands
         ##print('Got command: %s' % command)
 
         my_chat.my_chat_command(bot, chat_id, command, home_dir, work_dir)
 
-    else:
-        bot.sendMessage(chat_id, text="something went wrong - sorry about that")
+    if str(chat_id) != edgar_chatID and str(chat_id) != my_chatID:
+        bot.sendMessage(chat_id, text="Hey Stranger,\nthis information is propably not for your eyes! :smiley:")
 
 
-        
+
 #-------------------------------------------------------------------------------
 # Main related code
 #-------------------------------------------------------------------------------
