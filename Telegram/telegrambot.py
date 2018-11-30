@@ -35,7 +35,7 @@ def handle(msg):
     if my_chatID == str(chat_id):
 
         # Debug ausgabe der Commands
-        ##print('Got command: %s' % command)
+        print('Got command: %s' % command)
         #---------------------------------------------------------------------------
         # Temperature
         #---------------------------------------------------------------------------
