@@ -28,7 +28,8 @@ def handle(msg):
                 edgar_chatID = row[1]
 
 
-    print "using message chat id: " + chat_id
+    print "using message chat id: "
+    print chat_id
     # using my chatID to verify ist me chatting with the bot
     if my_chatID == chat_id:
 
