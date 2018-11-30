@@ -32,7 +32,7 @@ def handle(msg):
     print chat_id
     print my_chatID
     # using my chatID to verify ist me chatting with the bot
-    if my_chatID is chat_id:
+    if my_chatID == chat_id.str():
 
         # Debug ausgabe der Commands
         ##print('Got command: %s' % command)
