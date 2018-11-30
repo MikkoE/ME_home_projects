@@ -33,6 +33,8 @@ def handle(msg):
     print my_chatID
     # using my chatID to verify ist me chatting with the bot
     if my_chatID == str(chat_id):
+        print "youre allowed to chat"
+        bot.sendMessage(chat_id, text='Hey Mikki, hope youre doing great!')
 
         # Debug ausgabe der Commands
         print('Got command: %s' % command)
