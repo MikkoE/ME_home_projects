@@ -16,6 +16,15 @@ def handle(msg):
     home_dir = '/home/pi/ME_home_projects/Telegram/'
     work_dir = '/home/pi/Weather/data/'
 
+    csv_reader = csv.reader(open("/home/pi/env/env.csv", "r"), delimiter=";")
+    for row in csv_reader:
+        if row[0] == "my_chatID":
+            my_chatID = row[1]
+
+    #if my_chatID == chat_id:
+
+    print chat_id
+
     # Debug ausgabe der Commands
     ##print('Got command: %s' % command)
     #---------------------------------------------------------------------------

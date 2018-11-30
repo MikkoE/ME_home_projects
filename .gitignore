@@ -1,3 +1,4 @@
 # ignore all pyc files in telegram
 Telegram/*.pyc
 Telegram/test_*
+Telegram/log_*
