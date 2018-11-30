@@ -27,8 +27,8 @@ def handle(msg):
                 edgar_chatID = row[1]
 
     # calculate user access
-    print "using message chat id: "
-    print chat_id
+    #print "using message chat id: "
+    #print chat_id
 
     if edgar_chatID == str(chat_id):
         bot.sendMessage(chat_id, text="Nice try Edgar!\n Stop cheating on me :smiley:")

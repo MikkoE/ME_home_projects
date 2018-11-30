@@ -6,6 +6,8 @@ import os.path
 #user imports
 import matplot as mp
 
+plot_msg = 'I\'m plotting, wait a moment pls'
+
 ##################################################
 #   Handle Temperature Commands
 ##################################################
@@ -34,7 +36,7 @@ def plot_temp(bot, chat_id, datafile, outFileName):
     if os.path.isfile(outFileName):
         #print ('remove file ' + outFileName)
         os.remove(outFileName)
-    bot.sendMessage(chat_id, text='I\'m plotting, wait a sec pls')
+    bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
 
@@ -70,7 +72,7 @@ def plot_humi(bot, chat_id, datafile, outFileName):
     if os.path.isfile(outFileName):
         #print ('remove file ' + outFileName)
         os.remove(outFileName)
-    bot.sendMessage(chat_id, text='I\'m plotting, wait a sec pls')
+    bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
     mp.plotGraph(24*60*60, time.time(), datafile, 'Humidity', outFileName)
@@ -103,7 +105,7 @@ def plot_dewpoint(bot, chat_id, datafile, outFileName):
     if os.path.isfile(outFileName):
         #print ('remove file ' + outFileName)
         os.remove(outFileName)
-    bot.sendMessage(chat_id, text='I\'m plotting, wait a sec pls')
+    bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
     mp.plotGraph(24*60*60, time.time(), datafile, 'Dewpoit', outFileName)
@@ -137,7 +139,7 @@ def plot_systemv(bot, chat_id, datafile, outFileName):
     if os.path.isfile(outFileName):
         #print ('remove file ' + outFileName)
         os.remove(outFileName)
-    bot.sendMessage(chat_id, text='I\'m plotting, wait a sec pls')
+    bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
     mp.plotGraph(24*60*60, time.time(), datafile, 'System Voltage', outFileName)
@@ -170,7 +172,7 @@ def plot_wlan(bot, chat_id, datafile, outFileName):
     if os.path.isfile(outFileName):
         #print ('remove file ' + outFileName)
         os.remove(outFileName)
-    bot.sendMessage(chat_id, text='I\'m plotting, wait a sec pls')
+    bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
     mp.plotGraph(24*60*60, time.time(), datafile, 'WLAN Signal', outFileName)
