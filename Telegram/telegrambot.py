@@ -4,7 +4,6 @@ import sys
 import csv
 import time
 import telepot
-import emoji
 
 import my_chat
 
@@ -32,7 +31,7 @@ def handle(msg):
     #print chat_id
 
     if edgar_chatID == str(chat_id):
-        bot.sendMessage(chat_id, text="Nice try Edgar!\n Stop cheating on me " + emoji.emojize(':smiley:'))
+        bot.sendMessage(chat_id, text="Nice try Edgar!\n Stop cheating on me "")
 
     # using my chatID to verify ist me chatting with the bot
     if my_chatID == str(chat_id):
@@ -45,7 +44,7 @@ def handle(msg):
         my_chat.my_chat_command(bot, chat_id, command, home_dir, work_dir)
 
     if str(chat_id) != edgar_chatID and str(chat_id) != my_chatID:
-        bot.sendMessage(chat_id, text="Hey Stranger,\nthis information is propably not for your eyes! " + emoji.emojize(':smiley:'))
+        bot.sendMessage(chat_id, text="Hey Stranger,\nthis information is propably not for your eyes! ")
 
 
 
