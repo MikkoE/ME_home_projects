@@ -31,7 +31,10 @@ def handle(msg):
     #print chat_id
 
     if edgar_chatID == str(chat_id):
-        bot.sendMessage(chat_id, text="Nice try Edgar!\n Stop cheating on me ")
+        bot.sendMessage(chat_id, text="Okay Edgar!\n i let you see my awesome tings ;) ")
+
+        # uncomment if edgar didnt want to see anymore
+        my_chat.my_chat_command(bot, chat_id, command, home_dir, work_dir)
 
     # using my chatID to verify ist me chatting with the bot
     if my_chatID == str(chat_id):
