@@ -6,7 +6,6 @@ import time
 import telepot
 
 import my_chat
-import commands
 
 
 

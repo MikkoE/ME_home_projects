@@ -7,6 +7,7 @@ import os.path
 import matplot as mp
 
 plot_msg = 'I\'m plotting, wait a moment pls'
+day_title = '\nlast 24h'
 
 ##################################################
 #   Handle Temperature Commands
@@ -40,7 +41,7 @@ def plot_temp(bot, chat_id, datafile, outFileName):
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
 
-    mp.plotGraph(24*60*60, time.time(), datafile, 'Temperature', outFileName)
+    mp.plotGraph(24*60*60, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 
@@ -75,7 +76,7 @@ def plot_humi(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'Humidity', outFileName)
+    mp.plotGraph(24*60*60, time.time(), datafile, 'Humidity' + day_title, 'humi', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 ##################################################
@@ -108,7 +109,7 @@ def plot_dewpoint(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'Dewpoit', outFileName)
+    mp.plotGraph(24*60*60, time.time(), datafile, 'Dewpoit' + day_title, 'dewpoint', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 
@@ -142,7 +143,7 @@ def plot_systemv(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'System Voltage', outFileName)
+    mp.plotGraph(24*60*60, time.time(), datafile, 'System Voltage + day_title', 'voltage', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 ##################################################
@@ -175,5 +176,5 @@ def plot_wlan(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'WLAN Signal', outFileName)
+    mp.plotGraph(24*60*60, time.time(), datafile, 'WLAN Signal' + day_title, 'WLAN Signal', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))

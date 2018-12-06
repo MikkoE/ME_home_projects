@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
 # Funktion to plot data with
-def plot(title, data, outFileName):
+def plot(title,yLabelName, data, outFileName):
     plt.plot(data[0], data[1], label='Veranda', color='r')
     plt.plot(data[0], data[2], label='Wohnzimmer', color='b')
     plt.plot(data[0], data[3], label='Schlafzimmer', color='y')
@@ -18,14 +18,14 @@ def plot(title, data, outFileName):
     plt.gcf().autofmt_xdate()
 
     plt.xlabel('time')
-    plt.ylabel(title)
-    plt.title(title +'\nlast 24h')
+    plt.ylabel(yLabelName)
+    plt.title(title)
     plt.legend()
 
     plt.savefig(outFileName)
     plt.clf()
 
-def plotGraph(range, timestamp, file_name, title, outFileName): #range for the time, file_name with data
+def plotGraph(range, timestamp, file_name, title, yLabelName, outFileName): #range for the time, file_name with data
     # Values to store
     timestamps = []
     Veranda = []
@@ -58,7 +58,7 @@ def plotGraph(range, timestamp, file_name, title, outFileName): #range for the t
     csv_file.close()
 
     # call the actally plotting function
-    plot(title, container, outFileName)
+    plot(title, yLabelName, container, outFileName)
 
 # demo calls
 #plotGraph(24*60*60, time.time(), '/home/pi/Weather/data/temp/temp2018.csv', 'Temperature')
