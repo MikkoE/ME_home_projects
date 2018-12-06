@@ -13,7 +13,13 @@ def my_chat_command(bot, chat_id, command, home_dir, work_dir):
     if command == "/status_temp":
         commands.temp(bot, chat_id, work_dir + 'temp/temp2018.csv')
     # plot current temperature
-    if command == "/graph_temp":
+    if command == "/graph_temp_day":
+        commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+    # plot current temperature
+    if command == "/graph_temp_week":
+        commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+    # plot current temperature
+    if command == "/graph_temp_month":
         commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
     # print current temperature on a floorplan
     if command == "/floorplan_temp":

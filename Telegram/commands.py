@@ -11,6 +11,10 @@ day_title = '\nlast 24h'
 week_title = '\nlast 7 days'
 month_title = '\nlast 30 days'
 
+day_range = 24*60*60
+week_range = day_range*7
+month_range = day_range*30
+
 ##################################################
 #   Handle Temperature Commands
 ##################################################
@@ -43,7 +47,7 @@ def plot_temp_day(bot, chat_id, datafile, outFileName):
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
 
-    mp.plotGraph(24*60*60, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
+    mp.plotGraph(day_range, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 # plot teperature 1 week
@@ -55,7 +59,7 @@ def plot_temp_week(bot, chat_id, datafile, outFileName):
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
 
-    mp.plotGraph(24*60*60*7, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
+    mp.plotGraph(week_range, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 # plot teperature 1 week
@@ -67,7 +71,7 @@ def plot_temp_month(bot, chat_id, datafile, outFileName):
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
 
-    mp.plotGraph(24*60*60*30, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
+    mp.plotGraph(month_range, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 
@@ -102,7 +106,7 @@ def plot_humi(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'Humidity' + day_title, 'humi', outFileName)
+    mp.plotGraph(day_range, time.time(), datafile, 'Humidity' + day_title, 'humi', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 ##################################################
@@ -135,7 +139,7 @@ def plot_dewpoint(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'Dewpoit' + day_title, 'dewpoint', outFileName)
+    mp.plotGraph(day_range, time.time(), datafile, 'Dewpoit' + day_title, 'dewpoint', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 
@@ -169,7 +173,7 @@ def plot_systemv(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'System Voltage + day_title', 'voltage', outFileName)
+    mp.plotGraph(day_range, time.time(), datafile, 'System Voltage + day_title', 'voltage', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 ##################################################
@@ -202,5 +206,5 @@ def plot_wlan(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(24*60*60, time.time(), datafile, 'WLAN Signal' + day_title, 'WLAN Signal', outFileName)
+    mp.plotGraph(day_range, time.time(), datafile, 'WLAN Signal' + day_title, 'WLAN Signal', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))

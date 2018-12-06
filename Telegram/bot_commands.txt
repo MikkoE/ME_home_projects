@@ -1,5 +1,7 @@
 status_temp - Auflistung der Temperaturen
-graph_temp - Plot der Temp 24h
+graph_temp_day - Plot der Temp 24h
+graph_temp_week - Plot der Temp 7 days
+graph_temp_month - Plot der Temp 30 days
 floorplan_temp - Zeigt Grundris mit Temperaturen
 status_humi - Auflistung der Feuchtigkeitswerte
 graph_humi - Plot der Feuchtigkeit 24h
