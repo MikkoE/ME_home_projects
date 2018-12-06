@@ -71,7 +71,7 @@ def plot_temp_month(bot, chat_id, datafile, outFileName):
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
 
-    mp.plotGraph(month_range, time.time(), datafile, 'Temperature' + month_title, 'temp', outFileName)
+    mp.plotHisto(month_range, time.time(), datafile, 'Temperature' + month_title, 'temp', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 
