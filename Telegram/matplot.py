@@ -44,20 +44,18 @@ def plotGraph(range, timestamp, file_name, title, outFileName): #range for the t
 
     # split the values into container
     for row in csv_reader:
-        if row is None:
-            print "row is None"
-        else:
-            if len(row) > 0 :
-                times = int(row[0])/1000
-                if times >= last_date:
-                    value = datetime.datetime.fromtimestamp((int(row[0])/1000))
-                    timestamps.append(value)
-                    Veranda.append(row[1])
-                    Wohnzimmer.append(row[2])
-                    Schlafzimmer.append(row[3])
-                    Badezimmer.append(row[4])
-                    Elektrik.append(row[5])
-                    Carport.append(row[6])
+        print row
+        if len(row) > 0 :
+            times = int(row[0])/1000
+            if times >= last_date:
+                value = datetime.datetime.fromtimestamp((int(row[0])/1000))
+                timestamps.append(value)
+                Veranda.append(row[1])
+                Wohnzimmer.append(row[2])
+                Schlafzimmer.append(row[3])
+                Badezimmer.append(row[4])
+                Elektrik.append(row[5])
+                Carport.append(row[6])
     file.close()
 
     # call the actally plotting function
