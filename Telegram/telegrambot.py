@@ -59,7 +59,7 @@ for row in csv_reader:
         # bot privte key
         bot = telepot.Bot(row[1])
 bot.message_loop(handle)
-print('I am listening...')
+#print('I am listening...')
 
 while 1:
     try:
