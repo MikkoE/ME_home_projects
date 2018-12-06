@@ -12,8 +12,8 @@ week_title = '\nlast 7 days'
 month_title = '\nlast 30 days'
 
 day_range = 24*60*60
-week_range = day_range*7
-month_range = day_range*30
+week_range = 24*60*60*7
+month_range = 24*60*60*30
 
 ##################################################
 #   Handle Temperature Commands
