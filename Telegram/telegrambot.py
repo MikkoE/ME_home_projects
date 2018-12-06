@@ -6,6 +6,7 @@ import time
 import telepot
 
 import my_chat
+import commands
 
 
 
@@ -41,7 +42,10 @@ def handle(msg):
         # Debug ausgabe der Commands
         ##print('Got command: %s' % command)
 
-        my_chat.my_chat_command(bot, chat_id, command, home_dir, work_dir)
+        #my_chat.my_chat_command(bot, chat_id, command, home_dir, work_dir)
+        # plot current temperature
+        if command == "/graph_temp":
+            commands.plot_temp(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
 
     if str(chat_id) != edgar_chatID and str(chat_id) != my_chatID:
         bot.sendMessage(chat_id, text="Hey Stranger,\nthis information is propably not for your eyes! ")
