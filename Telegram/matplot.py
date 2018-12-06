@@ -40,7 +40,7 @@ def plotGraph(range, timestamp, file_name, title, outFileName): #range for the t
     # calculate time range
     last_date = timestamp - range
     csv_file = open(file_name, "r")
-    csv_reader = csv.reader(csv_file, delimiter=";")
+    csv_reader = csv.reader((line.replace('\0','') for line in csv_file), delimiter=";")
 
     # split the values into container
     for row in csv_reader:
