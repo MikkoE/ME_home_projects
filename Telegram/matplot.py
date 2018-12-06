@@ -35,7 +35,7 @@ def plotGraph(range, timestamp, file_name, title, outFileName): #range for the t
     Elektrik = []
     Carport = []
     container = [timestamps, Veranda, Wohnzimmer, Schlafzimmer, Badezimmer, Elektrik, Carport]
-    print file_name
+    #print file_name
 
     # calculate time range
     last_date = timestamp - range
