@@ -55,7 +55,7 @@ def plotGraph(range, timestamp, file_name, title, outFileName): #range for the t
                 Badezimmer.append(row[4])
                 Elektrik.append(row[5])
                 Carport.append(row[6])
-    file.close()
+    csv_file.close()
 
     # call the actally plotting function
     plot(title, container, outFileName)
