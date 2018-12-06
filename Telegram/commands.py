@@ -44,6 +44,18 @@ def plot_temp(bot, chat_id, datafile, outFileName):
     mp.plotGraph(24*60*60, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
+# plot teperature 1 week
+def plot_temp(bot, chat_id, datafile, outFileName):
+    if os.path.isfile(outFileName):
+        #print ('remove file ' + outFileName)
+        os.remove(outFileName)
+    bot.sendMessage(chat_id, text=plot_msg)
+    year = datetime.datetime.now().year
+    # range(24*60*60), timestamp, filelocation as stream, title
+
+    mp.plotGraph(24*60*60*7, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
+    bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
+
 
 
 ##################################################
