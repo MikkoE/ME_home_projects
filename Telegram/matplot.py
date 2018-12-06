@@ -39,12 +39,11 @@ def plotGraph(range, timestamp, file_name, title, outFileName): #range for the t
 
     # calculate time range
     last_date = timestamp - range
-    file = open(file_name, "r")
-    csv_reader = csv.reader(file, delimiter=";")
+    csv_file = open(file_name, "r")
+    csv_reader = csv.reader(csv_file, delimiter=";")
 
     # split the values into container
     for row in csv_reader:
-        print row
         if len(row) > 0 :
             times = int(row[0])/1000
             if times >= last_date:
