@@ -14,10 +14,10 @@ def my_chat_command(bot, chat_id, command, home_dir, work_dir):
         commands.temp(bot, chat_id, work_dir + 'temp/temp2018.csv')
     # plot current temperature
     if command == "/graph_temp_day":
-        commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+        commands.plot_temp_day(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
     # plot current temperature
     if command == "/graph_temp_week":
-        commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+        commands.plot_temp_week(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
     # plot current temperature
     if command == "/graph_temp_month":
         commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
