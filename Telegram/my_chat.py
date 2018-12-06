@@ -14,7 +14,7 @@ def my_chat_command(bot, chat_id, command, home_dir, work_dir):
         commands.temp(bot, chat_id, work_dir + 'temp/temp2018.csv')
     # plot current temperature
     if command == "/graph_temp":
-        commands.plot_temp(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+        commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
     # print current temperature on a floorplan
     if command == "/floorplan_temp":
         floorplan.createFloorPlan(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_floorplan.png')

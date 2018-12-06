@@ -8,6 +8,8 @@ import matplot as mp
 
 plot_msg = 'I\'m plotting, wait a moment pls'
 day_title = '\nlast 24h'
+week_title = '\nlast 7 days'
+month_title = '\nlast 30 days'
 
 ##################################################
 #   Handle Temperature Commands
@@ -33,7 +35,7 @@ def temp(bot, chat_id, datafile):
     bot.sendMessage(chat_id, text=out)
 
 # plot teperature 24 h
-def plot_temp(bot, chat_id, datafile, outFileName):
+def plot_temp_day(bot, chat_id, datafile, outFileName):
     if os.path.isfile(outFileName):
         #print ('remove file ' + outFileName)
         os.remove(outFileName)
@@ -45,7 +47,7 @@ def plot_temp(bot, chat_id, datafile, outFileName):
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 # plot teperature 1 week
-def plot_temp(bot, chat_id, datafile, outFileName):
+def plot_temp_week(bot, chat_id, datafile, outFileName):
     if os.path.isfile(outFileName):
         #print ('remove file ' + outFileName)
         os.remove(outFileName)
@@ -54,6 +56,18 @@ def plot_temp(bot, chat_id, datafile, outFileName):
     # range(24*60*60), timestamp, filelocation as stream, title
 
     mp.plotGraph(24*60*60*7, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
+    bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
+
+# plot teperature 1 week
+def plot_temp_month(bot, chat_id, datafile, outFileName):
+    if os.path.isfile(outFileName):
+        #print ('remove file ' + outFileName)
+        os.remove(outFileName)
+    bot.sendMessage(chat_id, text=plot_msg)
+    year = datetime.datetime.now().year
+    # range(24*60*60), timestamp, filelocation as stream, title
+
+    mp.plotGraph(24*60*60*30, time.time(), datafile, 'Temperature' + day_title, 'temp', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 
