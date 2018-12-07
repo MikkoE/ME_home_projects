@@ -123,12 +123,12 @@ def averageValue(average_range, rangeVal, file_name, container):
                         value = datetime.datetime.fromtimestamp((int(row[0])/1000))
                         container[0].append(value)
 
-                    av_Veranda = av_Veranda + int(row[1])
-                    av_Wohnzimmer = av_Wohnzimmer + int(row[2])
-                    av_Schlafzimmer = av_Schlafzimmer + int(row[3])
-                    av_Badezimmer = av_Badezimmer + int(row[4])
-                    av_Elektrik = av_Elektrik + int(row[5])
-                    av_Carport = av_Carport + int(row[6])
+                    av_Veranda = av_Veranda + float(row[1])
+                    av_Wohnzimmer = av_Wohnzimmer + float(row[2])
+                    av_Schlafzimmer = av_Schlafzimmer + float(row[3])
+                    av_Badezimmer = av_Badezimmer + float(row[4])
+                    av_Elektrik = av_Elektrik + float(row[5])
+                    av_Carport = av_Carport + float(row[6])
                     c = c + 1
 
                 else:
