@@ -103,7 +103,7 @@ def averageValue(average_range, rangeVal, file_name, container):
 
     av_Time = 0
     step_time = 0
-    c = 0
+    c = 1
 
     # calculate time range
     start_time = time.time()
@@ -132,16 +132,15 @@ def averageValue(average_range, rangeVal, file_name, container):
                     c = c + 1
 
                 else:
-                    if c != 0:
-                        container[1].append(av_Veranda/c)
-                        container[2].append(av_Wohnzimmer/c)
-                        container[3].append(av_Schlafzimmer/c)
-                        container[4].append(av_Badezimmer/c)
-                        container[5].append(av_Elektrik/c)
-                        container[6].append(av_Carport/c)
-                        c = 0
-                        step_time = step_time - average_range
-                        time_stamp = 0
+                    container[1].append(av_Veranda/c)
+                    container[2].append(av_Wohnzimmer/c)
+                    container[3].append(av_Schlafzimmer/c)
+                    container[4].append(av_Badezimmer/c)
+                    container[5].append(av_Elektrik/c)
+                    container[6].append(av_Carport/c)
+                    c = 1
+                    step_time = step_time - average_range
+                    time_stamp = 0
 
     csv_file.close()
     return container
