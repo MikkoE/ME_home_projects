@@ -118,11 +118,6 @@ def averageValue(average_range, rangeVal, file_name, container):
             times = int(row[0])/1000
             if times >= last_date:
                 if times >= step_time:
-                    if time_stamp == 0:
-                        time_stamp = 1
-                        value = datetime.datetime.fromtimestamp((int(row[0])/1000))
-                        container[0].append(value)
-
                     av_Veranda = av_Veranda + float(row[1])
                     av_Wohnzimmer = av_Wohnzimmer + float(row[2])
                     av_Schlafzimmer = av_Schlafzimmer + float(row[3])
@@ -132,6 +127,8 @@ def averageValue(average_range, rangeVal, file_name, container):
                     c = c + 1
 
                 else:
+                    value = datetime.datetime.fromtimestamp((int(row[0])/1000))
+                    container[0].append(value)
                     container[1].append(av_Veranda/c)
                     container[2].append(av_Wohnzimmer/c)
                     container[3].append(av_Schlafzimmer/c)
