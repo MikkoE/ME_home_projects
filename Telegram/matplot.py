@@ -132,7 +132,7 @@ def averageValue(average_range, rangeVal, file_name, container):
                     c = c + 1
 
                 else:
-                    if c not 0:
+                    if c != 0:
                         container[1].append(av_Veranda/c)
                         container[2].append(av_Wohnzimmer/c)
                         container[3].append(av_Schlafzimmer/c)
