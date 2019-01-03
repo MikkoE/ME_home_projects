@@ -173,7 +173,7 @@ def plot_systemv(bot, chat_id, datafile, outFileName):
     bot.sendMessage(chat_id, text=plot_msg)
     year = datetime.datetime.now().year
     # range(24*60*60), timestamp, filelocation as stream, title
-    mp.plotGraph(day_range, time.time(), datafile, 'System Voltage + day_title', 'voltage', outFileName)
+    mp.plotGraph(day_range, time.time(), datafile, 'System Voltage' + day_title, 'voltage', outFileName)
     bot.sendPhoto(chat_id, photo=open(outFileName, 'rb'))
 
 ##################################################
