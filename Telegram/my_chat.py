@@ -9,7 +9,7 @@ def my_chat_command(bot, chat_id, command, home_dir, work_dir):
     year = datetime.datetime.now().year
     print year
 
-    temp_file = work_dir + 'temp/temp' + year + '.csv'
+    temp_file = work_dir + 'temp/temp' + str(year) + '.csv'
     print temp_file
 
     #---------------------------------------------------------------------------
