@@ -1,4 +1,4 @@
-
+import datetime
 import commands
 import floorplan
 
@@ -6,24 +6,30 @@ import floorplan
 
 def my_chat_command(bot, chat_id, command, home_dir, work_dir):
 
+    year = datetime.datetime.now().year
+    print year
+
+    temp_file = work_dir + 'temp/temp'+ year'.csv'
+    print temp_file
+
     #---------------------------------------------------------------------------
     # Temperature
     #---------------------------------------------------------------------------
     # print current temperature
     if command == "/status_temp":
-        commands.temp(bot, chat_id, work_dir + 'temp/temp2018.csv')
+        commands.temp(bot, chat_id, )
     # plot current temperature
     if command == "/graph_temp_day":
-        commands.plot_temp_day(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+        commands.plot_temp_day(bot, chat_id, temp_file, home_dir + 'test_temperature.png')
     # plot current temperature
     if command == "/graph_temp_week":
-        commands.plot_temp_week(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+        commands.plot_temp_week(bot, chat_id, temp_file, home_dir + 'test_temperature.png')
     # plot current temperature
     if command == "/graph_temp_month":
-        commands.plot_temp_month(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_temperature.png')
+        commands.plot_temp_month(bot, chat_id, temp_file, home_dir + 'test_temperature.png')
     # print current temperature on a floorplan
     if command == "/floorplan_temp":
-        floorplan.createFloorPlan(bot, chat_id, work_dir + 'temp/temp2018.csv', home_dir + 'test_floorplan.png')
+        floorplan.createFloorPlan(bot, chat_id, temp_file, home_dir + 'test_floorplan.png')
 
     #---------------------------------------------------------------------------
     # Humidity
