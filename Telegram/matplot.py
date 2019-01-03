@@ -141,8 +141,3 @@ def averageValue(average_range, rangeVal, file_name, container):
 
     csv_file.close()
     return container
-
-# demo calls
-#plotGraph(24*60*60, time.time(), '/home/pi/Weather/data/temp/temp2018.csv', 'Temperature')
-#plotGraph(24*60*60, time.time(), '/home/pi/Weather/data/humidity/humidity2018.csv', 'Humidity')
-#plotGraph(24*60*60, time.time(), '/home/pi/Weather/data/dewpoint/dewpoint2018.csv', 'Dewpoint')
