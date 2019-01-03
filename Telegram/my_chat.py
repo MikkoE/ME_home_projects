@@ -9,7 +9,7 @@ def my_chat_command(bot, chat_id, command, home_dir, work_dir):
     year = datetime.datetime.now().year
     print year
 
-    temp_file = work_dir + 'temp/temp'+ year'.csv'
+    temp_file = work_dir + 'temp/temp' + year + '.csv'
     print temp_file
 
     #---------------------------------------------------------------------------
@@ -17,7 +17,7 @@ def my_chat_command(bot, chat_id, command, home_dir, work_dir):
     #---------------------------------------------------------------------------
     # print current temperature
     if command == "/status_temp":
-        commands.temp(bot, chat_id, )
+        commands.temp(bot, chat_id, temp_file)
     # plot current temperature
     if command == "/graph_temp_day":
         commands.plot_temp_day(bot, chat_id, temp_file, home_dir + 'test_temperature.png')
